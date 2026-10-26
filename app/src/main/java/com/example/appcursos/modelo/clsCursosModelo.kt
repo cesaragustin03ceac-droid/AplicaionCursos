@@ -2,13 +2,12 @@ package com.example.appcursos.modelo
 
 class clsCursosModelo {
 
-    suspend fun obtenerCursosPorCarrera(idCarrera: Int): List<dataCursos>{
+    suspend fun obtenerCursosPorCarrera(idCarrera: Int): List<DataImagenesCurso>{
         return RetrofitCliente.apiService.obtenerCursos(idCarrera)
     }
 
-    suspend fun obtenerDetalleCurso(idCurso: Int): dataCursos{
+    suspend fun obtenerDetalleCurso(idCurso: Int): dataCursos {
         return RetrofitCliente.apiService.detalleCurso(idCurso)
-    suspend fun obtenerCursosPorCarrera(carreraId : Int): List<DataImagenesCurso>{
-        return RetrofitCliente.apiService.obtenerCursos(carreraId)
     }
+
 }
