@@ -14,14 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCursos"
         android:usesCleartextTraffic="true">
-
-        <activity
-            android:name=".vista.RegistroCursoActivity"
-            android:exported="false" />
-
         <activity
             android:name=".vista.MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
@@ -33,7 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
