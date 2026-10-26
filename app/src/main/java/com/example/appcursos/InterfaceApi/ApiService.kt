@@ -17,4 +17,6 @@ interface ApiService {
 
     @GET("obtener_registros.php")
     suspend fun obtenerRegistros(): List<DataVerRegistro>
+    @POST("registrar_curso.php") // Cambia esto por el nombre exacto de tu archivo PHP en el servidor
+    suspend fun registrarCurso(@Body request: RegistroCursoRequest): RegistroCursoResponse
 }

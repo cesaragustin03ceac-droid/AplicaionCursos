@@ -14,6 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCursos"
         android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".vista.RegistroCursoActivity"
+            android:exported="false" />
         <activity
             android:name=".vista.MainActivity"
             android:exported="true"
