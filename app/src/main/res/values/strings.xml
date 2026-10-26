@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">appCursos</string>
+    <string name="txtdetalleCurso">CURSO</string>
+    <string name="txtdetalleCodigo">Código:</string>
+    <string name="txtdetalleDescripcion">DESCRIPCIÓN:</string>
+    <string name="txtdetalleDescripcionMas">Descripción detallada</string>
+    <string name="txtdetalleEspacio">ESPACIO:</string>
+    <string name="txtdetalleEspacioMas">Espacio detallado</string>
+    <string name="txtdetalleHoras">TOTAL HORAS:</string>
+    <string name="txtdetalleHorasTotales">Total de horas</string>
+    <string name="txtdetalleDiasAten">DÍAS DE ATENCIÓN:</string>
+    <string name="txtdetalleHorario">Horario</string>
+    <string name="btnRegresar">BACK</string>
+
+
 </resources>
