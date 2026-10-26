@@ -8,5 +8,7 @@ class clsCursosModelo {
 
     suspend fun obtenerDetalleCurso(idCurso: Int): dataCursos{
         return RetrofitCliente.apiService.detalleCurso(idCurso)
+    suspend fun obtenerCursosPorCarrera(carreraId : Int): List<DataImagenesCurso>{
+        return RetrofitCliente.apiService.obtenerCursos(carreraId)
     }
 }
