@@ -12,7 +12,7 @@ data class dataCursos(
     @SerialName ("salon") val salon: String = "",
     @SerialName ("total_horas") val totalHoras: String = "",
     @SerialName ("horario") val horario: String = "",
-    @SerialName ("url_imagen") val urlImagen: String = "",
+    @SerialName("url_imagen_principal") val urlImagen: String = "",
     @SerialName ("cupo_maximo") val cupoMaximo: Int = 0
 
 )
