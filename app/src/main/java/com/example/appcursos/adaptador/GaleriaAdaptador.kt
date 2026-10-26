@@ -1,15 +1,20 @@
 package com.example.appcursos.adaptador
 
+import android.content.ClipData
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewParent
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.appcursos.R
 import com.example.appcursos.modelo.DataImagenesCurso
+import com.example.appcursos.vista.RegistroCursoActivity
 
 class GaleriaAdaptador (private var listaImagen: List<DataImagenesCurso>): RecyclerView.Adapter<GaleriaAdaptador.GaleriaViewHolder>(){
 
@@ -17,6 +22,7 @@ class GaleriaAdaptador (private var listaImagen: List<DataImagenesCurso>): Recyc
         val imgGaleria: ImageView =itemView.findViewById(R.id.imgCursos)
         val txtSalon: TextView=itemView.findViewById(R.id.txtSalon)
         val txtCurso : TextView=itemView.findViewById(R.id.txtCurso)
+        val btnInscribir: Button = itemView.findViewById(R.id.btnRegistar)
     }
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): GaleriaViewHolder{
         val view= LayoutInflater.from(parent.context).inflate(R.layout.item_cursos, parent, false)
@@ -37,6 +43,14 @@ class GaleriaAdaptador (private var listaImagen: List<DataImagenesCurso>): Recyc
             .placeholder(android.R.drawable.ic_menu_gallery)
             .error(android.R.drawable.stat_notify_error)
             .into(holder.imgGaleria)
+
+        holder.btnInscribir.setOnClickListener {
+            val context=holder.itemView.context
+            val intent = Intent(context, RegistroCursoActivity::class.java).apply {
+                putExtra("id_curso", item.id)
+                putExtra("nombre_curso", item.nombreCurso)
+            }
+        }
     }
 
     override fun getItemCount(): Int {
