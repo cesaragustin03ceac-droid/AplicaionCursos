@@ -39,18 +39,20 @@ class RegistroCursoActivity : AppCompatActivity() {
         }
 
 
-        idCurso = intent.getIntExtra("id_curso", 0)
-        val nombreCurso = intent.getStringExtra("nombre_curso") ?: "CURSO"
-
-        txtEtiqInscripcion.text = "INSCRIPCIÓN: ${nombreCurso.uppercase()}"
-        txtCursoP.text = nombreCurso.uppercase()
-
+        txtEtiqInscripcion = findViewById(R.id.txtEtiqInscripcion)
+        txtCursoP = findViewById(R.id.txtCursoP)
         edtMatricula = findViewById(R.id.edtMatricula)
         edtFechaRegistro = findViewById(R.id.edtFechaRegistro)
         edtCorreo = findViewById(R.id.edtCorreo)
         btnConfInscripcion = findViewById(R.id.btnConfInscripcion)
         btnCancInscripcion = findViewById(R.id.btnCancInscripcion)
         btnRegresar = findViewById(R.id.btnRegresar)
+
+        idCurso = intent.getIntExtra("id_curso", 0)
+        val nombreCurso = intent.getStringExtra("nombre_curso") ?: "CURSO"
+
+        txtEtiqInscripcion.text = "INSCRIPCIÓN: ${nombreCurso.uppercase()}"
+        txtCursoP.text = nombreCurso.uppercase()
 
         presenter = clsRegistroCursoPresentador(this)
 
