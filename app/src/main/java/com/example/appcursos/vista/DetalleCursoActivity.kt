@@ -12,6 +12,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.appcursos.R
 import com.example.appcursos.modelo.dataCursos
 import com.example.appcursos.presentador.clsDetalleCursoPresentador
+import com.bumptech.glide.Glide
+import com.example.appcursos.modelo.RetrofitCliente
 
 class DetalleCursoActivity : AppCompatActivity() {
     private lateinit var presenter: clsDetalleCursoPresentador
@@ -62,7 +64,12 @@ class DetalleCursoActivity : AppCompatActivity() {
         txtEspacio.text = curso.salon
         txtHoras.text = curso.totalHoras
         txtHorario.text = curso.horario
-        // la imagen (imgCurso) la agregamos en el siguiente paso
+        Glide.with(this)
+            .load(RetrofitCliente.BASE_URL + curso.urlImagen)
+            .placeholder(android.R.drawable.ic_menu_gallery)
+            .error(android.R.drawable.ic_menu_gallery)
+            .into(imgCurso)
+
     }
 
 
