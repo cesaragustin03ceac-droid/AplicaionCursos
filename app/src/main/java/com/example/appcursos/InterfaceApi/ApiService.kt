@@ -3,15 +3,14 @@ package com.example.appcursos.InterfaceApi
 import com.example.appcursos.modelo.DataImagenesCurso
 import com.example.appcursos.modelo.DataVerRegistro
 import com.example.appcursos.modelo.dataCategoria
-import com.example.appcursos.modelo.RegistroCursoRequest
 import com.example.appcursos.modelo.RegistroCursoResponse
 import com.example.appcursos.modelo.dataCursos
+import com.example.appcursos.modelo.dataRegistroCurso
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
-import retrofit2.http.Body
-import retrofit2.http.POST
+
 
 
 interface ApiService {
@@ -27,7 +26,7 @@ interface ApiService {
     @GET("obtener_registros.php")
     suspend fun obtenerRegistros(): List<DataVerRegistro>
 
-    @POST("registrar_curso.php")
+
     @POST("registrar_curso.php") // Cambia esto por el nombre exacto de tu archivo PHP en el servidor
-    suspend fun registrarCurso(@Body request: RegistroCursoRequest): RegistroCursoResponse
+    suspend fun registrarCurso(@Body request: dataRegistroCurso): RegistroCursoResponse
 }

@@ -25,7 +25,7 @@ class VerRegistroAdapter(private var listaRegistros: List<DataVerRegistro> = emp
         val registro = listaRegistros[position]
         holder.txtNombreCurso.text = registro.nombreCurso
         holder.txtCantidadInscritos.text ="inscritos:${registro.cantidadInscritos}/cupos:${registro.totalCupos}"
-        val urlImagenCompleta = "http://192.168.101.101/Curso_api/upload/" + registro.urlImagen
+        val urlImagenCompleta = "http://192.168.1.67/Curso_api/upload/" + registro.urlImagen
 
         Glide.with(holder.itemView.context)
             .load(urlImagenCompleta)

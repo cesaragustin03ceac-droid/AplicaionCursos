@@ -11,21 +11,20 @@ class clsRegistroCursoPresentador(private val view: RegistroCursoActivity) {
 
     private val modelo = clsRegistroCursoModelo()
 
-    fun realizarRegistro(matricula: String, fecha: String, correo: String) {
+    fun realizarRegistro(idCurso: Int, matricula: String, fecha: String, correo: String) {
         if (matricula.isEmpty() || fecha.isEmpty() || correo.isEmpty()) {
             view.mostrarError("Por favor, llena todos los campos")
             return
         }
 
-        if (!correo.contains("@") || !correo.contains(".")) {
-            view.mostrarError("Por favor, ingresa un correo institucional válido")
+        if (matricula.isEmpty() || fecha.isEmpty() || correo.isEmpty()) {
+            view.mostrarError("Por favor, llena todos los campos")
             return
         }
-
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 val respuesta = withContext(Dispatchers.IO) {
-                    modelo.registrarAlumno(matricula, fecha, correo)
+                    modelo.registrarAlumno(idCurso, matricula, fecha, correo)
                 }
                 if (respuesta.exito) {
                     view.registroExitoso(respuesta.mensaje)
@@ -38,3 +37,4 @@ class clsRegistroCursoPresentador(private val view: RegistroCursoActivity) {
         }
     }
 }
+

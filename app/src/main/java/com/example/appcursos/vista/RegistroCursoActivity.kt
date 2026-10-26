@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,9 @@ class RegistroCursoActivity : AppCompatActivity() {
     private lateinit var btnCancInscripcion: Button
     private lateinit var btnRegresar: ImageView
     private lateinit var presenter: clsRegistroCursoPresentador
+    private lateinit var txtEtiqInscripcion: TextView
+    private lateinit var txtCursoP: TextView
+    private var idCurso: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +37,13 @@ class RegistroCursoActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+        idCurso = intent.getIntExtra("id_curso", 0)
+        val nombreCurso = intent.getStringExtra("nombre_curso") ?: "CURSO"
+
+        txtEtiqInscripcion.text = "INSCRIPCIÓN: ${nombreCurso.uppercase()}"
+        txtCursoP.text = nombreCurso.uppercase()
 
         edtMatricula = findViewById(R.id.edtMatricula)
         edtFechaRegistro = findViewById(R.id.edtFechaRegistro)
@@ -59,7 +70,7 @@ class RegistroCursoActivity : AppCompatActivity() {
         val fecha = edtFechaRegistro.text.toString().trim()
         val correo = edtCorreo.text.toString().trim()
 
-        presenter.realizarRegistro(matricula, fecha, correo)
+        presenter.realizarRegistro(idCurso, matricula, fecha, correo)
     }
 
     fun registroExitoso(mensaje: String) {
