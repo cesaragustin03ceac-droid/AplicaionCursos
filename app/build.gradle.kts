@@ -1,16 +1,17 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.application)
+    kotlin("plugin.serialization") version "2.3.20"
 }
-
 android {
     namespace = "com.example.appcursos"
-    compileSdk = 36
+    compileSdk {
+        version = release(37)
+    }
 
     defaultConfig {
         applicationId = "com.example.appcursos"
         minSdk = 29
-        targetSdk = 34
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
@@ -19,21 +20,14 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            optimization {
+                enable = false
+            }
         }
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    kotlinOptions {
-        jvmTarget = "11"
     }
 }
 
@@ -48,16 +42,15 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
 
-    // Kotlinx Serialization Json
+    // 2. Librería principal de Kotlinx Serialization Json
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
 
-    // Retrofit & Kotlinx Serialization Converter
+    // 3. Convertidor oficial de Retrofit para Kotlinx Serialization
     implementation("com.squareup.retrofit2:converter-kotlinx-serialization:2.11.0")
 
     // Retrofit & OkHttp
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
-
-    // Glide
+    // Para imágenes
     implementation("com.github.bumptech.glide:glide:4.16.0")
 }

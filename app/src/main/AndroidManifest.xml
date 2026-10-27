@@ -23,21 +23,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".vista.RegistroCursoActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".vista.VerRegistroActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".vista.DetalleCursoActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>
