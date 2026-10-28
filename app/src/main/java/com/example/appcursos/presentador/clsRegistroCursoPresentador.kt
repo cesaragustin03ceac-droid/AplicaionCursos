@@ -12,10 +12,9 @@ class clsRegistroCursoPresentador(private val view: RegistroCursoActivity) {
     private val modelo = clsRegistroCursoModelo()
 
     fun realizarRegistro(idCurso: Int, matricula: String, fecha: String, correo: String) {
-        if (matricula.isEmpty() || fecha.isEmpty() || correo.isEmpty()) {
-            view.mostrarError("Por favor, llena todos los campos")
-            return
-        }
+
+
+
 
         if (matricula.isEmpty() || fecha.isEmpty() || correo.isEmpty()) {
             view.mostrarError("Por favor, llena todos los campos")

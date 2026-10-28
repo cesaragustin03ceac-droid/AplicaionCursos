@@ -38,9 +38,9 @@ class GaleriaAdaptador (private var listaImagen: List<DataImagenesCurso>): Recyc
         holder.txtSalon.text = "salon:" + item.salon
 
 
-        val baseUrl = "http://192.168.1.67/Curso_api/"
-        val urlCompleta = baseUrl + item.urlImagen
+        val baseUrl = "http://10.173.120.214/Curso_api/"
 
+        val urlCompleta = baseUrl + item.urlImagen
         Glide.with(holder.itemView.context)
             .load(urlCompleta)
             .placeholder(android.R.drawable.ic_menu_gallery)
