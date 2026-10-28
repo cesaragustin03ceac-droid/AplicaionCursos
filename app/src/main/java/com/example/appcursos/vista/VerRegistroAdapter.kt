@@ -17,16 +17,17 @@ class VerRegistroAdapter(private var listaRegistros: List<DataVerRegistro> = emp
         val imgCurso: ImageView = itemView.findViewById(R.id.imgCurso)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val vista = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_ver_registro, parent, false)
+        val vista = LayoutInflater.from(parent.context).inflate(R.layout.item_ver_registro, parent, false)
         return ViewHolder(vista)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val registro = listaRegistros[position]
         holder.txtNombreCurso.text = registro.nombreCurso
-        val rutaLimpia = registro.urlImagen.trim().removePrefix("/")
-        val urlImagenCompleta = "http://192.168.101.103/Curso_api/" + rutaLimpia
-        holder.txtCantidadInscritos.text = "inscritos:${registro.cantidadInscritos}/cupos:${registro.totalCupos}"
+        holder.txtCantidadInscritos.text = "inscritos: " + registro.cantidadInscritos + " / cupos: ..."
+
+        val baseUrl = "http://192.168.101.100/Curso_api/"
+        val urlImagenCompleta = baseUrl + registro.urlImagen
+
         Glide.with(holder.itemView.context)
             .load(urlImagenCompleta)
             .error(android.R.drawable.stat_notify_error)
