@@ -1,18 +1,13 @@
 package com.example.appcursos.vista
-
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appcursos.R
@@ -68,5 +63,4 @@ class VerRegistroActivity : AppCompatActivity() {
     fun mostrarTotalInscritos(total: Int) {
         txtTotal.text = "Total de inscritos:$total"
     }
-
 }

@@ -1,5 +1,4 @@
 package com.example.appcursos.vista
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,7 @@ import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appcursos.R
 import com.example.appcursos.modelo.DataVerRegistro
-
+import com.example.appcursos.modelo.RetrofitCliente
 class VerRegistroAdapter(private var listaRegistros: List<DataVerRegistro> = emptyList()) : RecyclerView.Adapter<VerRegistroAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val txtNombreCurso: TextView = itemView.findViewById(R.id.txtNombreCurso)
@@ -23,8 +22,8 @@ class VerRegistroAdapter(private var listaRegistros: List<DataVerRegistro> = emp
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val registro = listaRegistros[position]
         holder.txtNombreCurso.text = registro.nombreCurso
-        holder.txtCantidadInscritos.text ="inscritos:${registro.cantidadInscritos}/cupos:${registro.totalCupos}"
-        val urlImagenCompleta = "http://192.168.101.101/Curso_api/upload/" + registro.urlImagen
+        holder.txtCantidadInscritos.text ="Inscritos:${registro.cantidadInscritos}/Cupos:${registro.totalCupos}"
+        val urlImagenCompleta = RetrofitCliente.BASE_URL + registro.urlImagen
 
         Glide.with(holder.itemView.context)
             .load(urlImagenCompleta)

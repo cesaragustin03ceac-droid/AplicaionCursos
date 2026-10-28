@@ -5,30 +5,50 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
     tools:context=".vista.VerRegistroActivity">
+    <LinearLayout
+        android:id="@+id/headerBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#114C9E"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ESTADO DE INSCRIPCIONES"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="264dp"
         android:layout_height="51dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#26438E"
         android:text="VOLVER AL CATALOGO"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvRegistros" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/spnCarreras"
-        android:layout_width="288dp"
+        android:layout_width="320dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/headerBar"
+        android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/txtTotal"
@@ -39,14 +59,17 @@
         app:layout_constraintEnd_toEndOf="@+id/spnCarreras"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/spnCarreras"
-        app:layout_constraintTop_toBottomOf="@+id/spnCarreras" />
+        app:layout_constraintTop_toBottomOf="@+id/spnCarreras"
+        android:textStyle="bold"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRegistros"
-        android:layout_width="331dp"
-        android:layout_height="474dp"
+        android:layout_width="339dp"
+        android:layout_height="492dp"
         android:layout_marginStart="1dp"
+        android:layout_marginBottom="32dp"
         android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTotal" />

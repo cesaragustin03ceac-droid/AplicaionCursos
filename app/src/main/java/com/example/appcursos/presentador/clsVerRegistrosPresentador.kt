@@ -21,20 +21,15 @@ class clsVerRegistrosPresentador(private val vista: VerRegistroActivity) {
         }
     }
     fun seleccionarCarrera(idCarrera: Int) {
-        if (idCarrera > 0) {
-            CoroutineScope(Dispatchers.Main).launch {
-                try {
-                    val listaCursos=modelo.obtenerCursosPorCarrera(idCarrera)
-                    val totalInscritos=modelo.calcularTotalInscritos(listaCursos)
-                    vista.mostrarTotalInscritos(totalInscritos)
-                    vista.mostrarRegistros(listaCursos)
-                } catch (e: Exception) {
-                    vista.mostrarError("Error: " + e.localizedMessage)
-                }
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val listaCursos = modelo.obtenerCursosPorCarrera(idCarrera)
+                val totalInscritos = modelo.calcularTotalInscritos(listaCursos)
+                vista.mostrarTotalInscritos(totalInscritos)
+                vista.mostrarRegistros(listaCursos)
+            } catch (e: Exception) {
+                vista.mostrarError("Error: " + e.localizedMessage)
             }
-        } else {
-            vista.mostrarTotalInscritos(0)
-            vista.mostrarRegistros(emptyList())
         }
     }
 }
