@@ -27,6 +27,6 @@ interface ApiService {
     suspend fun obtenerRegistros(): List<DataVerRegistro>
 
 
-    @POST("registro_curso.php")
+    @POST("registrar_curso.php")
     suspend fun registrarCurso(@Body request: dataRegistroCurso): RegistroCursoResponse
 }
