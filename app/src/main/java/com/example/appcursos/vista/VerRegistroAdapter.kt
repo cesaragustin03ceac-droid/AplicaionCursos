@@ -23,14 +23,11 @@ class VerRegistroAdapter(private var listaRegistros: List<DataVerRegistro> = emp
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val registro = listaRegistros[position]
         holder.txtNombreCurso.text = registro.nombreCurso
-        holder.txtCantidadInscritos.text = "inscritos: " + registro.cantidadInscritos + " / cupos: ..."
-
-        val baseUrl = "http://192.168.101.100/Curso_api/"
-        val urlImagenCompleta = baseUrl + registro.urlImagen
+        holder.txtCantidadInscritos.text ="inscritos:${registro.cantidadInscritos}/cupos:${registro.totalCupos}"
+        val urlImagenCompleta = "http://192.168.101.101/Curso_api/upload/" + registro.urlImagen
 
         Glide.with(holder.itemView.context)
             .load(urlImagenCompleta)
-            .error(android.R.drawable.stat_notify_error)
             .into(holder.imgCurso)
     }
     override fun getItemCount(): Int {
