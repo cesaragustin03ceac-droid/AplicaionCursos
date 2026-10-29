@@ -41,6 +41,7 @@ class GaleriaAdaptador (private var listaImagen: List<DataImagenesCurso>): Recyc
         val baseUrl = "http://192.168.0.114/Curso_api/"
         val urlCompleta = baseUrl + item.urlImagen
 
+        val urlCompleta = baseUrl + item.urlImagen
         Glide.with(holder.itemView.context)
             .load(urlCompleta)
             .placeholder(android.R.drawable.ic_menu_gallery)

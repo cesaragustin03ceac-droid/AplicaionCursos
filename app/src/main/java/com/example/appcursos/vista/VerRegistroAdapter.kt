@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appcursos.R
 import com.example.appcursos.modelo.DataVerRegistro
+import com.example.appcursos.modelo.RetrofitCliente
 
 class VerRegistroAdapter(private var listaRegistros: List<DataVerRegistro> = emptyList()) : RecyclerView.Adapter<VerRegistroAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
