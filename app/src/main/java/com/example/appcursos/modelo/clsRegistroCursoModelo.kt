@@ -11,4 +11,8 @@ class clsRegistroCursoModelo {
         )
         return RetrofitCliente.apiService.registrarCurso(request)
     }
+    suspend fun buscarAlumno(matricula: String):dataBuscarResponse{
+        val request=dataBuscarRequest(matricula)
+        return RetrofitCliente.apiService.Buscar(request)
+    }
 }
