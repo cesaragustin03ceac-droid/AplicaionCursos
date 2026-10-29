@@ -4,8 +4,11 @@ import com.example.appcursos.modelo.DataImagenesCurso
 import com.example.appcursos.modelo.DataVerRegistro
 import com.example.appcursos.modelo.dataCategoria
 import com.example.appcursos.modelo.RegistroCursoResponse
+import com.example.appcursos.modelo.dataBuscarRequest
+import com.example.appcursos.modelo.dataBuscarResponse
 import com.example.appcursos.modelo.dataCursos
 import com.example.appcursos.modelo.dataRegistroCurso
+import okhttp3.Request
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -25,8 +28,9 @@ interface ApiService {
 
     @GET("obtener_registros.php")
     suspend fun obtenerRegistros(): List<DataVerRegistro>
-
-
-    @POST("registrar_curso.php")
+    @POST("registro_curso.php")
     suspend fun registrarCurso(@Body request: dataRegistroCurso): RegistroCursoResponse
+    @POST("buscar.php")
+    suspend fun  Buscar(@Body request: dataBuscarRequest): dataBuscarResponse
+
 }
