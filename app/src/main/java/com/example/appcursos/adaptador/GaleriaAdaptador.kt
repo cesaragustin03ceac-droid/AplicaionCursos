@@ -38,7 +38,8 @@ class GaleriaAdaptador (private var listaImagen: List<DataImagenesCurso>): Recyc
         holder.txtSalon.text = "salon:" + item.salon
 
 
-        val baseUrl = "http://10.173.120.214/Curso_api/"
+        val baseUrl = "http://192.168.0.114/Curso_api/"
+        val urlCompleta = baseUrl + item.urlImagen
 
         val urlCompleta = baseUrl + item.urlImagen
         Glide.with(holder.itemView.context)
@@ -52,6 +53,7 @@ class GaleriaAdaptador (private var listaImagen: List<DataImagenesCurso>): Recyc
             val intent = Intent(context, RegistroCursoActivity::class.java).apply {
                 putExtra("id_curso", item.id)
                 putExtra("nombre_curso", item.nombreCurso)
+                putExtra("url_imagen",item.urlImagen)
             }
             context.startActivity(intent)
 

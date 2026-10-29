@@ -26,7 +26,9 @@ class VerRegistroAdapter(private var listaRegistros: List<DataVerRegistro> = emp
         val registro = listaRegistros[position]
         holder.txtNombreCurso.text = registro.nombreCurso
         holder.txtCantidadInscritos.text ="inscritos:${registro.cantidadInscritos}/cupos:${registro.totalCupos}"
-        val urlImagenCompleta = RetrofitCliente.BASE_URL + registro.urlImagen
+        val urlImagenCompleta = "http://192.168.0.114/Curso_api/uploads/" + registro.urlImagen
+        //"http://192.168.1.67/Curso_api/upload/"
+
         Glide.with(holder.itemView.context)
             .load(urlImagenCompleta)
             .into(holder.imgCurso)
