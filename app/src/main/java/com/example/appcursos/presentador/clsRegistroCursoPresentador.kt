@@ -19,8 +19,8 @@ class clsRegistroCursoPresentador(private val view: RegistroCursoActivity){
             view.mostrarError("Ingresa un correo electronico valido")
             return
         }
-        val regexFecha= Regex("^\\d{4}-\\d{2}-\\d{2}$")
-        if (regexFecha.matches(fecha)){
+        val regexFecha = Regex("^\\d{4}-\\d{2}-\\d{2}$")
+        if (!regexFecha.matches(fecha)) {
             view.mostrarError("La fecha debe tener formato AAAA-MM-DD")
             return
         }

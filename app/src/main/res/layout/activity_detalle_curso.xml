@@ -38,10 +38,10 @@
 
                 <Button
                     android:id="@+id/btnRegresar"
-                    android:layout_width="136dp"
+                    android:layout_width="186dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
-                    android:backgroundTint="#1565C0"
+                    android:backgroundTint="#26438E"
                     android:drawableLeft="@drawable/ic_arrow_back"
                     android:drawablePadding="8dp"
                     android:text="@string/btnRegresar"
