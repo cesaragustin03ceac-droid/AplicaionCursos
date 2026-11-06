@@ -16,6 +16,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.example.appcursos.R
 import com.example.appcursos.presentador.clsRegistroCursoPresentador
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class RegistroCursoActivity : AppCompatActivity() {
 
@@ -54,10 +56,16 @@ class RegistroCursoActivity : AppCompatActivity() {
         btnRegresar = findViewById<ImageView>(R.id.btnRegresar)
         imgCurso=findViewById<ImageView>(R.id.imgCurso)
 
+        val fechaActual = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+        edtFechaRegistro.setText(fechaActual)
+        edtFechaRegistro.isFocusable = false
+        edtFechaRegistro.isClickable= false
+        edtFechaRegistro.isFocusableInTouchMode= false
+
         idCurso = intent.getIntExtra("id_curso", 0)
         val nombreCurso = intent.getStringExtra("nombre_curso") ?: ""
         val urlImagen = intent.getStringExtra("url_imagen") ?: ""
-        val urlImagenCompleta = "http://192.168.0.114/Curso_api/" + urlImagen
+        val urlImagenCompleta = "http://192.168.0.107/Curso_api/" + urlImagen
         //"http://192.168.1.67/Curso_api/upload/"
         Glide.with(this)
             .load(urlImagenCompleta)

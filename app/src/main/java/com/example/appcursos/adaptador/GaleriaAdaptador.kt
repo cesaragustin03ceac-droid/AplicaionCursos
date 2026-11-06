@@ -38,8 +38,8 @@ class GaleriaAdaptador (private var listaImagen: List<DataImagenesCurso>): Recyc
         holder.txtSalon.text = "salon:" + item.salon
 
 
-        val baseUrl = "http://192.168.0.114/Curso_api/"
-        val urlCompleta = baseUrl + item.urlImagen
+        val baseUrl = "http://192.168.0.107/Curso_api/"
+        val urlCompleta=baseUrl+item.urlImagen
 
         val urlCompleta = baseUrl + item.urlImagen
         Glide.with(holder.itemView.context)

@@ -10,7 +10,7 @@
     <string name="txtdetalleHorasTotales">Total de horas</string>
     <string name="txtdetalleDiasAten">DÍAS DE ATENCIÓN:</string>
     <string name="txtdetalleHorario">Horario</string>
-    <string name="btnRegresar">BACK</string>
+    <string name="btnRegresar">REGRESAR</string>
 
 
 </resources>
